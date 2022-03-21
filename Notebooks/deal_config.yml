@@ -1,0 +1,25 @@
+version: sample       # track versions of the iterations
+random_seed: 10       # seed for ML algorithms to get reproduceable results
+mode: DEBUG           # logging mode: available DEBUG vs INFO (INFO will be default if mode!=DEBUG)
+
+paths:            
+    raw_data:
+        position_expo_dataset: C:\Users\m.sagar\OneDrive - TFO Cloud\Next Deal Offer\Pos Exp Nov 30 21.xlsx
+        asset_master_dataset: C:\Users\m.sagar\OneDrive - TFO Cloud\Next Deal Offer\AssetMaster 14 Dec 2021.xlsx
+        buy_date_dataset: C:\Users\m.sagar\OneDrive - TFO Cloud\Next Deal Offer\BuyDate.xlsx
+        ips_clients_dataset: C:\Users\m.sagar\OneDrive - TFO Cloud\Next Deal Offer\Copy of IPS Clients list December_MS_4_1.xlsx
+        available_deals_dataset: C:\Users\m.sagar\OneDrive - TFO Cloud\Next Deal Offer\Deal Details export_MS_4_1.xlsx
+        liquidity_monitor_dataset: C:\Users\m.sagar\OneDrive - TFO Cloud\Next Deal Offer\liquidityMonitor_MS_1_12.xlsx
+
+    folders:
+        result: C:\Users\m.sagar\OneDrive - TFO Cloud\Next Deal Offer\result\                                                               # place to save scoring results: labels, TFO fit, engagement
+
+deal_recommendation:
+    topup: True                         # if True will include the recommendation for top-ups
+    top_n_deals_value : 20              # restricts the number of deals to be recommended
+ 
+    # OR Condition for below mentioned Top-up Criteria
+    top_aum_criteria_perc : 0.1         # Min Top-up Criteria in term sof percentage of AUM     
+    min_value_topup : 100000            # Min Top-up value in terms of absoulte USD
+    
+    buffer_liquidity : 1.5              # Percentage of AUM to be kept as buffer
